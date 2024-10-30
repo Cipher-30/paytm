@@ -2,6 +2,9 @@ const jwt = require('jsonwebtoken');
 const User = require("../modal/user")
 
 const SECRET_STRING = "PAYTM@KRO";
+
+
+//validating token/cookies
 const userAuthen = async (req,res, next) => {
 
     try{

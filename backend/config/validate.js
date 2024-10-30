@@ -46,9 +46,22 @@ const validateUserExist = async (req) => {
 
 }
 
+
+
+const validUpdate = ( req) => {
+
+    const ALLOWED_UPDATES = ['firstName', 'lastName', 'password'];
+    const reqUpdate = req.body;
+
+    const isUpdateValid = Object.keys(reqUpdate).every( (field) => ( ALLOWED_UPDATES.includes(field) ) );
+
+    return isUpdateValid;
+}
+
 module.exports = 
 {
     validSignUpData, 
-    validateUserExist 
+    validateUserExist ,
+    validUpdate
 
 };
